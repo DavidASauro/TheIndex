@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Fraunces, Nunito } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,20 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  weight: ["600", "400"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
+
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["700", "400"],
+  style: ["italic", "normal"],
 });
 
 export const metadata: Metadata = {
@@ -23,12 +37,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${nunito.variable} flex flex-col antialiased bg-[#F5F1E8] noise-bg min-h-screen`}
       >
-        {children}
+        <main className="flex-1">{children}</main>
+        <footer className="text-center mb-10 font-nunito text-[#805428] italic font-bold">
+          Thank you for checking it out.
+        </footer>
       </body>
     </html>
   );
 }
+
+/*className="dark"*/
