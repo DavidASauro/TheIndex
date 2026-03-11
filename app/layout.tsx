@@ -39,7 +39,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${nunito.variable} flex flex-col antialiased bg-[#1a0e05]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${nunito.variable} flex flex-col antialiased `}
+        style={{
+          backgroundColor: "#3b1c00",
+          backgroundImage: `url("/bg-texture.png")`,
+          backgroundRepeat: "repeat, repeat",
+          backgroundSize: "auto, auto",
+          backgroundBlendMode: "overlay",
+        }}
       >
         <main className="flex-1">{children}</main>
         <footer className="text-center mb-5 mt-10 font-nunito text-[#805428] italic font-bold">

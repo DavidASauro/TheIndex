@@ -33,6 +33,14 @@ const PIN_COLORS: Record<string, Pin> = {
   },
 };
 
+const CARD_COLORS = {
+  pink: "bg-[#F0ADB0]",
+  orange: "bg-[#F5C2AB]",
+  yellow: "bg-[#FAE0AD]",
+  green: "bg-[#C6D7B2]",
+  blue: "bg-[#C4DEF0]",
+};
+
 interface Thing {
   id: number;
   link: string;
@@ -42,6 +50,7 @@ interface Thing {
   rotation: number;
   tape: boolean;
   pin: string;
+  card_color: string;
 }
 
 const myThings: Readonly<Thing[]> = [
@@ -54,6 +63,7 @@ const myThings: Readonly<Thing[]> = [
     rotation: -2.1,
     tape: false,
     pin: "red",
+    card_color: CARD_COLORS.yellow,
   },
   {
     id: 2,
@@ -64,6 +74,7 @@ const myThings: Readonly<Thing[]> = [
     rotation: 1.8,
     tape: true,
     pin: "red",
+    card_color: CARD_COLORS.blue,
   },
 ];
 
@@ -135,7 +146,7 @@ const CardGrid = () => {
             className="block"
           >
             <Card
-              className="relative p-0 gap-0 border-0 overflow-hidden shadow-md shadow-[#7A5C3E] flex flex-col h-full "
+              className="relative p-0 gap-0 border-0 overflow-hidden shadow-md shadow-[#7A5C3E] flex flex-col h-full rounded-none"
               style={{
                 boxShadow:
                   hoveredId === thing.id
@@ -143,23 +154,29 @@ const CardGrid = () => {
                     : "2px 4px 10px rgba(0,0,0,0.25), 4px 8px 24px rgba(0,0,0,0.18)",
               }}
             >
-              <CardHeader className="p-0 relative w-full h-30">
+              <CardHeader
+                className={`p-5 w-full h-full flex flex-col items-center ${thing.card_color} rounded-none`}
+              >
                 <Image
                   src={thing.img}
                   alt={thing.link + " preview"}
-                  fill
+                  width={200}
+                  height={200}
                   className="object-fill"
                   style={{
-                    filter: "sepia(0.12) contrast(0.95) brightness(0.9)",
+                    filter:
+                      "drop-shadow(0 5px 5px rgba(0,0,0,0.5)) sepia(0.12) contrast(0.95) brightness(0.9)",
                   }}
                 />
               </CardHeader>
-              <CardFooter className="flex justify-center items-center bg-[#805428] flex-1 p-4 border-0">
+              <CardFooter
+                className={`flex justify-center items-center ${thing.card_color} flex-1 p-4 border-0 -mt-1 rounded-none`}
+              >
                 <div className="flex flex-col items-center text-center">
-                  <h3 className="text-[#F5F1E8] text-xl font-nunito font-bold">
+                  <h3 className="text-[#000000] font-nunito font-bold">
                     {thing.title}
                   </h3>
-                  <p className="text-lg text-[#f5f1e8d0] line-clamp-2 font-nunito italic">
+                  <p className=" text-[#000000d0] line-clamp-2 font-nunito italic">
                     {thing.description}
                   </p>
                 </div>
