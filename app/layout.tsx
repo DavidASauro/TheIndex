@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces, Nunito } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Fraunces,
+  Nunito,
+  Indie_Flower,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,6 +32,13 @@ const nunito = Nunito({
   style: ["italic", "normal"],
 });
 
+const indieFlower = Indie_Flower({
+  variable: "--font-indie-flower",
+  weight: "400",
+  style: ["normal"],
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "The Index",
   description: "A place where I can show all the fun things I made.",
@@ -39,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${nunito.variable} flex flex-col antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${nunito.variable} ${indieFlower.variable} flex flex-col antialiased `}
         style={{
           backgroundColor: "#3b1c00",
           backgroundImage: `url("/bg-texture.png")`,

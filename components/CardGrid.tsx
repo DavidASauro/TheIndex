@@ -173,10 +173,10 @@ const CardGrid = () => {
                 className={`flex justify-center items-center ${thing.card_color} flex-1 p-4 border-0 -mt-1 rounded-none`}
               >
                 <div className="flex flex-col items-center text-center">
-                  <h3 className="text-[#000000] font-nunito font-bold">
+                  <h3 className="text-[#555555] font-indie-flower font-bold text-2xl">
                     {thing.title}
                   </h3>
-                  <p className=" text-[#000000d0] line-clamp-2 font-nunito italic">
+                  <p className=" text-[#555555] line-clamp-2 font-indie-flower text-lg">
                     {thing.description}
                   </p>
                 </div>
