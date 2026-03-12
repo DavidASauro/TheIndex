@@ -40,7 +40,7 @@ const indieFlower = Indie_Flower({
 });
 
 export const metadata: Metadata = {
-  title: "The Index",
+  title: "David's Pinboard",
   description: "A place where I can show all the fun things I made.",
 };
 
