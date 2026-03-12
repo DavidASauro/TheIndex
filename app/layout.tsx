@@ -52,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${nunito.variable} ${indieFlower.variable} flex flex-col antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${nunito.variable} ${indieFlower.variable} flex flex-col antialiased`}
         style={{
           backgroundColor: "#3b1c00",
           backgroundImage: `url("/bg-texture.png")`,
@@ -63,7 +63,7 @@ export default function RootLayout({
       >
         <main className="flex-1">{children}</main>
         <footer className="text-center mb-5 mt-10 font-nunito text-[#805428] italic font-bold">
-          Thank you for checking out my work 😊 !
+          Thank you for checking out my work! There will be more to come 😊 !
         </footer>
       </body>
     </html>

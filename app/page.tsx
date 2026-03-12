@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 const Page = () => {
   return (
-    <div className="w-full mx-auto flex flex-col gap-20 px-5">
+    <div className="w-full mx-auto flex flex-col gap-10 px-5">
       <div className="text-center mt-10 flex flex-col gap-5">
         <h1 className="text-7xl  lg:text-8xl text-[#805428] font-fraunces font-semibold italic [text-shadow:3px_2px_3px_#3E2723] tracking-wide">
           {`David's Pinboard`}
