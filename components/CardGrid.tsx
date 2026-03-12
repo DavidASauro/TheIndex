@@ -160,9 +160,8 @@ const CardGrid = () => {
                 <Image
                   src={thing.img}
                   alt={thing.link + " preview"}
-                  width={200}
+                  width={300}
                   height={200}
-                  className="object-fill"
                   style={{
                     filter:
                       "drop-shadow(0 5px 5px rgba(0,0,0,0.5)) sepia(0.12) contrast(0.95) brightness(0.9)",
